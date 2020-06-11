@@ -6,3 +6,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Milestone 1 : Basic Project Setup
+- Milestone 2 : Basic User Interaction
