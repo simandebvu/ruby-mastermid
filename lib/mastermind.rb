@@ -1,4 +1,6 @@
 require_relative 'player.rb'
+require_relative 'string.rb'
+
 class Mastermind
     attr_accessor :coder_array
     def initialize
@@ -8,7 +10,7 @@ class Mastermind
         @coder_array = Array.new
     end
 
-    def calc_score
+    def compare_guess
         if @player.last_guess = @answer
             puts "Jarvis wins!".red
             puts "#{player.last_guess} is correct!"
