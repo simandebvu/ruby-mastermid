@@ -7,13 +7,6 @@
 - Ruby,
 - VSCode
 
-## Live Demo
-
-[Live Demo Link](#)
-
-
-## Getting Started
-
 ### Usage
 
 To play this game you need to:
@@ -21,7 +14,7 @@ To play this game you need to:
 * [download](https://github.com/simandebvu/ruby-mastermind/archive/master.zip) or clone this repo:
   - Clone with SSH:
   ```
-    git@github.com:rammazzoti2000/simandebvu/ruby-mastermind.git
+    git@github.com:simandebvu/simandebvu/ruby-mastermind.git
   ```
   - Clone with HTTPS
   ```
@@ -54,6 +47,7 @@ Give a ⭐️ if you like this project!
 
 - The Odin Project
 - Microverse
+- @NickDiPreta
 
 ## 📝 License
 

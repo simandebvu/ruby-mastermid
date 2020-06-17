@@ -1,58 +1,57 @@
-require_relative 'string.rb'
-require_relative 'main.rb'
-
 class Player
-    def initialize 
-        @guesses = 12
-        @last_guess = Array.new
-        @player_human = true
-        @saved_guesses = Array.new(4, '')
-        @colors = Array(1..6)
-        @slot_one_colors = Array(1..6)
-        @slot_two_colors = Array(1..6)
-        @slot_three_colors = Array(1..6)
-        @slot_four_colors = Array(1..6)
-    end
+  attr_accessor :guesses_left, :last_guess, :player_human, :saved_guesses, :colors, :saved_colors, :slot_one_colors, :slot_two_colors, :slot_three_colors, :slot_four_colors
+  def initialize
+    @guesses_left = 12
+    @last_guess = []
+    @player_human = true
+    @saved_guesses = ['', '', '', '']
+    @colors = %w[red green brown blue magenta cyan]
+    @slot_one_colors = %w[red green brown blue magenta cyan]
+    @slot_two_colors = %w[red green brown blue magenta cyan]
+    @slot_three_colors = %w[red green brown blue magenta cyan]
+    @slot_four_colors = %w[red green brown blue magenta cyan]
+  end
 
-    def make_guess
-        if @player_human == true
-            @last_guess = Array.new
-            puts "Guess 1"
-            @last_guess << gets.strip
-            puts "Guess 2"
-            @last_guess << gets.strip
-            puts "Guess 3"
-            @last_guess << gets.strip
-            puts "Guess 4"
-            @last_guess << gets.strip
-            puts "Last guess : #{@last_guess}"
+  def make_guess
+    if @player_human == true
+      @last_guess = []
+      puts 'Guess peg 1'
+      @last_guess << gets.strip
+      puts 'Guess peg 2'
+      @last_guess << gets.strip
+      puts 'Guess peg 3'
+      @last_guess << gets.strip
+      puts 'Guess peg 4'
+      @last_guess << gets.strip
+      puts "Last guess was #{last_guess} "
+    end
+    if @player_human == false
+      @last_guess = []
+      i = 0
+      while i < 4
+        if @saved_guesses[i] != ''
+          @last_guess[i] = @saved_guesses[i]
         else
-            @last_guess = Array.new
-            i = 0
-            if !@saved_guesses[i].empty?
-                @last_guess[i] = @saved_guesses[i]
-            else
-                if i == 0
-                    s = @slot_one_colors.sample
-                    @slot_one_colors -= s
-                    @last_guess[i] = s
-                elsif i == 1
-                    s = @slot_two_colors.sample
-                    @slot_two_colors -= s
-                    @last_guess[i] = s
-                elsif i == 2
-                    s = @slot_three_colors.sample
-                    @slot_three_colors -= s
-                    @last_guess[i] = s
-                else
-                    s = @slot_four_colors.sample
-                    @slot_four_colours -= s
-                    @last_guess[i] = s
-                end
-            end
-            i += 1
+          if i == 0
+            samp = @slot_one_colors.sample
+            @slot_one_colors -= [samp]
+            @last_guess[i] = samp
+          elsif i == 1
+            samp = @slot_two_colors.sample
+            @slot_two_colors -= [samp]
+            @last_guess[i] = samp
+          elsif i == 2
+            samp = @slot_three_colors.sample
+            @slot_three_colors -= [samp]
+            @last_guess[i] = samp
+          else
+            samp = @slot_four_colors.sample
+            @slot_four_colors -= [samp]
+            @last_guess[i] = samp
+          end
         end
+        i += 1
+      end
     end
-end
-
-
+    end
+    end
