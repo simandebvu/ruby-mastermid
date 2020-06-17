@@ -15,7 +15,7 @@ To play this game you need to:
   - Clone with SSH:
   ```
 
-git@github.com:simandebvu/ruby-mastermind.git
+  git@github.com:simandebvu/ruby-mastermind.git
 
   ```
   - Clone with HTTPS
