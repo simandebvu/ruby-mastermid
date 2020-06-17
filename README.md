@@ -14,7 +14,9 @@ To play this game you need to:
 * [download](https://github.com/simandebvu/ruby-mastermind/archive/master.zip) or clone this repo:
   - Clone with SSH:
   ```
-    git@github.com:simandebvu/simandebvu/ruby-mastermind.git
+
+git@github.com:simandebvu/ruby-mastermind.git
+
   ```
   - Clone with HTTPS
   ```
